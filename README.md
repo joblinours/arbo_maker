@@ -23,8 +23,8 @@ Le script nécessite Python 3.6 ou une version plus récente.
 Clonez le repository et installez les dépendances nécessaires (si nécessaire) :
 
 ```bash
-git clone https://github.com/votre-utilisateur/test-directory-tree-generator.git
-cd test-directory-tree-generator
+git clone https://github.com/joblinours/arbo_maker.git
+cd arbo_maker
 ```
 
 Aucune dépendance externe n'est nécessaire.
@@ -34,7 +34,7 @@ Aucune dépendance externe n'est nécessaire.
 ### Syntaxe de la commande
 
 ```bash
-python generate_tree.py <chemin_du_dossier_racine> [options]
+python arbo_maker.py <chemin_du_dossier_racine> [options]
 ```
 
 ### Options
@@ -64,6 +64,10 @@ python generate_tree.py /path/to/directory --max_depth 3 --min_files 2 --max_fil
 ```
 
 Cela générera une arborescence avec une profondeur maximale de 3, entre 2 et 5 fichiers par dossier, et affichera l'arborescence à la fin.
+
+### En cours de résolution
+
+Le script n'intergais pas correctement avec les option `--exact_files_total` et `--exact_dirs_total`, des corrections sont en cours
 
 ### Résultat
 
