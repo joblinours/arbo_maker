@@ -1,80 +1,79 @@
-
 # Test Directory Tree Generator
 
-Ce script Python génère une arborescence de fichiers et de dossiers pour des tests, avec des paramètres personnalisables pour contrôler la profondeur, le nombre de fichiers, le nombre de sous-dossiers, et plus encore.
+This Python script generates a file and folder tree for testing, with customizable parameters to control depth, number of files, number of subfolders, and more.
 
 ## Description
 
-Le script crée une structure de répertoires avec des fichiers au sein de ces répertoires, selon des spécifications définies par l'utilisateur. Il est possible de définir des templates pour les noms de fichiers, les noms de dossiers et le contenu des fichiers. Le script prend également en charge des contraintes sur le nombre total de fichiers et de dossiers créés.
+The script creates a directory structure with files within these directories, according to specifications defined by the user. Templates for file names, folder names, and file content can be defined. The script also supports constraints on the total number of files and folders created.
 
-### Fonctionnalités
+### Features
 
-- Crée une arborescence de répertoires avec des fichiers à différents niveaux de profondeur.
-- Paramètres personnalisables pour le nombre de fichiers, de sous-dossiers, et la profondeur.
-- Possibilité de définir des contraintes sur le nombre total de fichiers et de dossiers.
-- Affiche l'arborescence générée sous forme de texte à la manière de la commande `tree`.
+- Creates a directory tree with files at different depth levels.
+- Customizable parameters for the number of files, subfolders, and depth.
+- Option to set constraints on the total number of files and folders.
+- Displays the generated tree in text form similar to the `tree` command.
 
-## Prérequis
+## Prerequisites
 
-Le script nécessite Python 3.6 ou une version plus récente.
+The script requires Python 3.6 or a later version.
 
 ## Installation
 
-Clonez le repository et installez les dépendances nécessaires (si nécessaire) :
+Clone the repository and install the necessary dependencies (if needed):
 
 ```bash
 git clone https://github.com/joblinours/arbo_maker.git
 cd arbo_maker
 ```
 
-Aucune dépendance externe n'est nécessaire.
+No external dependencies are required.
 
-## Utilisation
+## Usage
 
-### Syntaxe de la commande
+### Command syntax
 
 ```bash
-python arbo_maker.py <chemin_du_dossier_racine> [options]
+python arbo_maker.py <root_folder_path> [options]
 ```
 
 ### Options
 
-- `base_path`: Le chemin du dossier racine où l'arborescence sera créée. (Obligatoire)
-- `--min_depth`: Profondeur minimale de l'arborescence (par défaut `1`).
-- `--max_depth`: Profondeur maximale de l'arborescence (par défaut `5`).
-- `--min_files`: Nombre minimum de fichiers par dossier (par défaut `1`).
-- `--max_files`: Nombre maximum de fichiers par dossier (par défaut `5`).
-- `--min_dirs`: Nombre minimum de sous-dossiers par dossier (par défaut `1`).
-- `--max_dirs`: Nombre maximum de sous-dossiers par dossier (par défaut `3`).
-- `--file_name`: Template pour les noms de fichiers (par défaut `file_{index}.txt`).
-- `--subdir_name`: Template pour les sous-dossiers (par défaut `subdir_{index}`).
-- `--file_content`: Template pour le contenu des fichiers (par défaut `This is the content of {file_name}.`).
-- `--min_files_total`: Nombre minimum total de fichiers.
-- `--max_files_total`: Nombre maximum total de fichiers.
-- `--exact_files_total`: Nombre exact total de fichiers.
-- `--min_dirs_total`: Nombre minimum total de dossiers.
-- `--max_dirs_total`: Nombre maximum total de dossiers.
-- `--exact_dirs_total`: Nombre exact total de dossiers.
-- `--tree`: Affiche l'arborescence complète après la création.
+- `base_path`: The root folder path where the tree will be created. (Required)
+- `--min_depth`: Minimum depth of the tree (default is `1`).
+- `--max_depth`: Maximum depth of the tree (default is `5`).
+- `--min_files`: Minimum number of files per folder (default is `1`).
+- `--max_files`: Maximum number of files per folder (default is `5`).
+- `--min_dirs`: Minimum number of subfolders per folder (default is `1`).
+- `--max_dirs`: Maximum number of subfolders per folder (default is `3`).
+- `--file_name`: Template for file names (default is `file_{index}.txt`).
+- `--subdir_name`: Template for subfolder names (default is `subdir_{index}`).
+- `--file_content`: Template for file content (default is `This is the content of {file_name}.`).
+- `--min_files_total`: Minimum total number of files.
+- `--max_files_total`: Maximum total number of files.
+- `--exact_files_total`: Exact total number of files.
+- `--min_dirs_total`: Minimum total number of folders.
+- `--max_dirs_total`: Maximum total number of folders.
+- `--exact_dirs_total`: Exact total number of folders.
+- `--tree`: Displays the full tree after creation.
 
-### Exemple d'utilisation
+### Example Usage
 
 ```bash
 python generate_tree.py /path/to/directory --max_depth 3 --min_files 2 --max_files 5 --tree
 ```
 
-Cela générera une arborescence avec une profondeur maximale de 3, entre 2 et 5 fichiers par dossier, et affichera l'arborescence à la fin.
+This will generate a tree with a maximum depth of 3, between 2 and 5 files per folder, and display the tree at the end.
 
-### En cours de résolution
+### In Progress
 
-Le script n'intergais pas correctement avec les option `--exact_files_total` et `--exact_dirs_total`, des corrections sont en cours
+The script did not integrate correctly with the `--exact_files_total` and `--exact_dirs_total` options, fixes are underway.
 
-### Résultat
+### Result
 
-Le script génère une structure de répertoires et crée des fichiers à l'intérieur de ceux-ci. Une fois l'arborescence terminée, le script affiche un résumé avec le nombre total de fichiers et de dossiers créés, puis, si l'option `--tree` est activée, il affiche l'arborescence de manière similaire à la commande `tree`.
+The script generates a directory structure and creates files within it. Once the tree is completed, the script displays a summary with the total number of files and folders created, and if the `--tree` option is enabled, it shows the tree similarly to the `tree` command.
 
 ---
 
-### Licence
+### License
 
-Ce projet est sous licence [MIT](LICENSE).
+This project is licensed under the [MIT](LICENSE) license.
